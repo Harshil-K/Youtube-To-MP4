@@ -4,7 +4,7 @@
 FROM node:20 as frontend-builder
 WORKDIR /app
 COPY Frontend/my-youtube-app ./Frontend
-WORKDIR /app/Frontend
+WORKDIR /app/Frontend/my-youtube-app
 RUN npm install && npm run build
 
 # Stage 2 – Backend with FastAPI and ffmpeg
