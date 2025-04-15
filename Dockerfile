@@ -3,8 +3,7 @@
 # Stage 1 – Build frontend
 FROM node:20 as frontend-builder
 WORKDIR /app
-COPY Frontend/my-youtube-app ./my-youtube-app
-WORKDIR /app/my-youtube-app
+COPY Frontend/my-youtube-app/ ./
 RUN npm install && npm run build
 
 # Stage 2 – Backend with FastAPI and ffmpeg
@@ -18,7 +17,7 @@ COPY Backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy frontend build from stage 1
-COPY --from=frontend-builder /app/my-youtube-app/dist ./frontend
+COPY --from=frontend-builder /app/dist ./frontend
 
 EXPOSE 8000
 
