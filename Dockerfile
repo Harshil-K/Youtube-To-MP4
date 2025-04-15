@@ -3,7 +3,7 @@
 # Stage 1 – Build frontend
 FROM node:20 as frontend-builder
 WORKDIR /app
-COPY Frontend/my-frontend-app ./Frontend
+COPY Frontend/my-youtube-app ./Frontend
 WORKDIR /app/Frontend
 RUN npm install && npm run build
 
