@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
 //frontend
-
 function App() {
   const [url, setUrl] = useState('');
   const [message, setMessage] = useState('');

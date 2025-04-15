@@ -29,8 +29,8 @@ async def download(data: URLRequest):
     filename = downloadVideo(data.url)
     return FileResponse(filename, media_type="video/mp4", filename="video.mp4")
 
-app.mount("/", StaticFiles(directory="Frontend", html=True), name="Frontend")
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
 
 @app.get("/")
 async def serve_home():
-    return FileResponse("Frontend/index.html")
+    return FileResponse("frontend/index.html")
